@@ -78,7 +78,7 @@ namespace Warcaby
             xml.Save("Ustawienia.xml");
         }
 
-        public static void SaveGemeToLastFile()
+        public static void SaveGameToLastFile()
         {
 
         }

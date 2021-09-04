@@ -58,3 +58,9 @@ E:\Projekty\Build\Win.mp3
 E:\Projekty\Build\Warcaby.exe.config
 E:\Projekty\Build\Warcaby.exe
 E:\Projekty\Build\Warcaby.pdb
+E:\Projekty\Warcaby\Build\Klik.mp3
+E:\Projekty\Warcaby\Build\Lose.mp3
+E:\Projekty\Warcaby\Build\Win.mp3
+E:\Projekty\Warcaby\Build\Warcaby.exe.config
+E:\Projekty\Warcaby\Build\Warcaby.exe
+E:\Projekty\Warcaby\Build\Warcaby.pdb

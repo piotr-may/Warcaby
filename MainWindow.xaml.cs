@@ -345,7 +345,7 @@ namespace Warcaby
                 listaRuchówBiały.Items.Add(ruchyGraczaBiałego[i]);
                 i++;
             }
-            ruchyGraczaCzarnego = Ustawienia.LoadListWhite("Ustawienia.xml");
+            ruchyGraczaCzarnego = Ustawienia.LoadListBlack("Ustawienia.xml");
             listaRuchówCzarny.Items.Clear();
             i = 0;
             while (ruchyGraczaCzarnego[i] != null && ruchyGraczaCzarnego[i] != " "

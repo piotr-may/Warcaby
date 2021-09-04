@@ -63,7 +63,7 @@
             <ListBox x:Name="listaRuchówBiały" Grid.Column="0" Grid.Row="2" Margin="10,10,10,10" FontSize="18" />
             <ListBox x:Name="listaRuchówCzarny" Grid.Column="2" Grid.Row="2" Margin="10,10,10,10" FontSize="18" />
             <TextBlock x:Name="StanRuchu" Grid.Column="2" Grid.Row="0" FontSize="20" Text="0" Visibility="Hidden"/>
-            <CheckBox x:Name="TataPrzycisk" Grid.Column="2" Grid.Row="0" Content="SUPER TATA PRZYCISK"
+            <!--<CheckBox x:Name="TataPrzycisk" Grid.Column="2" Grid.Row="0" Content="SUPER TATA PRZYCISK"
                     FontSize="20" IsChecked="False" Margin="5"/>
             <Popup Width="1000" Height="600" IsOpen="{Binding ElementName=TataPrzycisk, Path=IsChecked}"
                    Placement="MousePoint" HorizontalOffset="100" VerticalOffset="100">
@@ -76,7 +76,7 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                </Popup>
+                </Popup>-->
         </Grid>
     </Grid>
     </DockPanel>
