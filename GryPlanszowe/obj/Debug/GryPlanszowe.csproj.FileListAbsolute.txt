@@ -1,0 +1,5 @@
+E:\VisualStudioKsiążka\Reversi\GryPlanszowe\bin\Debug\GryPlanszowe.dll
+E:\VisualStudioKsiążka\Reversi\GryPlanszowe\bin\Debug\GryPlanszowe.pdb
+E:\VisualStudioKsiążka\Reversi\GryPlanszowe\obj\Debug\GryPlanszowe.csproj.CoreCompileInputs.cache
+E:\VisualStudioKsiążka\Reversi\GryPlanszowe\obj\Debug\GryPlanszowe.dll
+E:\VisualStudioKsiążka\Reversi\GryPlanszowe\obj\Debug\GryPlanszowe.pdb

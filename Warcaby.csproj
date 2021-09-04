@@ -125,12 +125,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Reversi\GryPlanszowe\GryPlanszowe.csproj">
-      <Project>{6dbb26f3-9fb6-4e17-808d-cf1bf7ae163c}</Project>
-      <Name>GryPlanszowe</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Klik.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -152,6 +146,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\VisualStudioKsiążka\Reversi\GryPlanszowe\GryPlanszowe.csproj">
+      <Project>{6dbb26f3-9fb6-4e17-808d-cf1bf7ae163c}</Project>
+      <Name>GryPlanszowe</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
