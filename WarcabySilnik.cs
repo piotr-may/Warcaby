@@ -19,7 +19,7 @@ namespace Warcaby
         
 
 
-        private int[] liczbyPól = new int[3];
+        private int[] liczbyPól = new int[5];
 
         private void obliczLiczbyPól()
         {
@@ -33,9 +33,13 @@ namespace Warcaby
         public int LiczbaPustychPól { get { return liczbyPól[0]; } }
         public int LiczbaPólGracz1 { get { return liczbyPól[1]; } }
         public int LiczbaPólGracz2 { get { return liczbyPól[2]; } }
+        public int LiczbaDamekGracz1 { get { return liczbyPól[3]; } }
+        public int LiczbaDamekGracz2 { get { return liczbyPól[4]; } }
 
         public int pozycjaXPodniesionegoKamienia;
         public int pozycjaYPodniesionegoKamienia;
+
+        public bool czyDamka = false;
 
         public int pozycjaXZbitegoKamienia;
         public int pozycjaYZbitegoKamienia;
@@ -115,72 +119,186 @@ namespace Warcaby
                 throw new Exception("nieprawidłowe współrzędne pola");
 
             //czy pole należy do gracza
-            if (plansza[poziomo, pionowo] != NumerGraczaWykonującegoNastępnyRuch) return -1;
+            if (plansza[poziomo, pionowo] != NumerGraczaWykonującegoNastępnyRuch &&
+                plansza[poziomo, pionowo] != NumerGraczaWykonującegoNastępnyRuch+2) return -1;
+            if (plansza[poziomo, pionowo] ==
+                NumerGraczaWykonującegoNastępnyRuch + 2) { czyDamka = true;
+                //MessageBox.Show("wybrano damke");
+            }
+            else czyDamka = false;
 
             pozycjaXPodniesionegoKamienia = poziomo;
             pozycjaYPodniesionegoKamienia = pionowo;
-            //MessageBox.Show("3");
+            //MessageBox.Show("Posniesiono");
             return 1;
         }
 
         protected int PrzenieśKamień(int poziomo, int pionowo, bool tylkoTest)
         {
             //czy współrzędne prawidłowe
-           // MessageBox.Show("Dane: ",poziomo.ToString()+ pionowo.ToString());
             if (!czyWspółrzędnePolaPrawidłowe(poziomo, pionowo))
                 throw new Exception("nieprawidłowe współrzędne pola");
 
             //czy pole nie jest zajęte
             if (plansza[poziomo, pionowo] != 0) return -1;
-            //MessageBox.Show("wywołano");
+            //MessageBox.Show(poziomo.ToString() + pionowo.ToString());
             //sprawdzaniePowrawnościRuchu
             bool położenieKamieniaMożliwe = plansza[poziomo, pionowo] == 0;
             położenieKamieniaMożliwe = true;
             int ileKamieniZbitych = -1;
+
             //połorzenie
             if (położenieKamieniaMożliwe)
             {
                 int zmianaX = poziomo - pozycjaXPodniesionegoKamienia;
                 int zmianaY = pionowo - pozycjaYPodniesionegoKamienia;
-                if (zmianaX == 0 || zmianaY == 0)
+                if (czyDamka)
                 {
-                    //MessageBox.Show("0");
-                    return -1;
-                }
-                else if ((zmianaX == 1 || zmianaX == -1) && (zmianaY == 1 || zmianaY == -1))
-                {
-                    plansza[pozycjaXPodniesionegoKamienia, pozycjaYPodniesionegoKamienia] = 0;
-                    plansza[poziomo, pionowo] = NumerGraczaWykonującegoNastępnyRuch;
-                    zmieńBierzącegoGracza();
-                    obliczLiczbyPól();
-                    //MessageBox.Show("1","Przesuniento");
-                    return 0;
-                }
-                else if ((zmianaX == 1 || zmianaX == -1) || (zmianaY == 1 || zmianaY == -1))
-                {
-                    //MessageBox.Show("0");
-                    return -1;
-                }
-                else if ((zmianaX == 2 || zmianaX == -2) && (zmianaY == 2 || zmianaY == -2))
-                {
-                    if (plansza[zmianaX / 2 + pozycjaXPodniesionegoKamienia, zmianaY / 2 + pozycjaYPodniesionegoKamienia]
-                        == numerPrzeciwnika(NumerGraczaWykonującegoNastępnyRuch))
+                    
+                    if (zmianaX == 0 || zmianaY == 0)
                     {
-                        plansza[zmianaX / 2 + pozycjaXPodniesionegoKamienia,
-                            zmianaY / 2 + pozycjaYPodniesionegoKamienia] = 0;
+                        //MessageBox.Show("0");
+                        return -1;
+                    }
+                    else if  (zmianaX == zmianaY || zmianaX * -1 == zmianaY || zmianaX == zmianaY * -1)
+                    {
+                        if (zmianaX > 0 || zmianaY > 0)
+                        {
+                            for(int i = pozycjaXPodniesionegoKamienia+1; i < poziomo; i++)
+                                for (int j = pozycjaYPodniesionegoKamienia+1; j < pionowo; j++)
+                                {
+                                    if (plansza[i, j] ==
+                                        numerPrzeciwnika(NumerGraczaWykonującegoNastępnyRuch) &&
+                                        plansza[i + 1, j + 1] == 0)
+                                    {
+                                        plansza[i, j] = 0;
+                                    }
+                                    else if (plansza[i, j] != 0)
+                                        return -1;
+                                    
+                                }
+                        }
+                        else if(zmianaX > 0 || zmianaY < 0)
+                        {
+                            for (int i = pozycjaXPodniesionegoKamienia+1; i < poziomo; i++)
+                                for (int j = pozycjaYPodniesionegoKamienia-1; j > pionowo; j--)
+                                {
+                                    if (plansza[i, j] ==
+                                        numerPrzeciwnika(NumerGraczaWykonującegoNastępnyRuch) &&
+                                        plansza[i + 1, j - 1] == 0)
+                                    {
+                                        plansza[i, j] = 0;
+                                    }
+                                    else if (plansza[i, j] != 0)
+                                        return -1;
+                                    
+                                }
+
+                        }
+                        else if (zmianaX < 0 || zmianaY > 0)
+                        {
+                            for (int i = pozycjaXPodniesionegoKamienia-1; i >= poziomo; i--)
+                                for (int j = pozycjaYPodniesionegoKamienia+1; j <= pionowo; j++)
+                                {
+                                    if (plansza[i, j] ==
+                                        numerPrzeciwnika(NumerGraczaWykonującegoNastępnyRuch) &&
+                                        plansza[i - 1, j + 1] == 0)
+                                    {
+                                        plansza[i, j] = 0;
+                                    }
+                                    else if (plansza[i, j] !=0)
+                                        return -1;
+                                }
+                        }
+                        else if (zmianaX < 0 || zmianaY < 0)
+                        {
+                            for (int i = pozycjaXPodniesionegoKamienia-1; i >= poziomo; i--)
+                                for (int j = pozycjaYPodniesionegoKamienia-1; j >= pionowo; j--)
+                                {
+                                    if (plansza[i, j] ==
+                                        numerPrzeciwnika(NumerGraczaWykonującegoNastępnyRuch) &&
+                                        plansza[i - 1, j - 1] == 0)
+                                    {
+                                        plansza[i, j] = 0;
+                                    }
+                                    else if (plansza[i, j] !=0)
+                                        return -1;
+                                }
+                        }
                         plansza[pozycjaXPodniesionegoKamienia, pozycjaYPodniesionegoKamienia] = 0;
-                        plansza[poziomo, pionowo] = NumerGraczaWykonującegoNastępnyRuch;
+                        plansza[poziomo, pionowo] = NumerGraczaWykonującegoNastępnyRuch+2;
                         zmieńBierzącegoGracza();
                         obliczLiczbyPól();
+                        
+                        //MessageBox.Show("1","Przesuniento");
                         return 1;
                     }
+                    else if ((zmianaX == 1 || zmianaX == -1) || (zmianaY == 1 || zmianaY == -1))
+                    {
+                        //MessageBox.Show("0");
+                        return -1;
+                    }
+                    /*else if ((zmianaX == 2 || zmianaX == -2) && (zmianaY == 2 || zmianaY == -2))
+                    {
+                        if (plansza[zmianaX / 2 + pozycjaXPodniesionegoKamienia, zmianaY / 2 + pozycjaYPodniesionegoKamienia]
+                            == numerPrzeciwnika(NumerGraczaWykonującegoNastępnyRuch))
+                        {
+                            plansza[zmianaX / 2 + pozycjaXPodniesionegoKamienia,
+                                zmianaY / 2 + pozycjaYPodniesionegoKamienia] = 0;
+                            plansza[pozycjaXPodniesionegoKamienia, pozycjaYPodniesionegoKamienia] = 0;
+                            plansza[poziomo, pionowo] = NumerGraczaWykonującegoNastępnyRuch;
+                            zmieńBierzącegoGracza();
+                            obliczLiczbyPól();
+                            return 1;
+                        }
+                    }*/
+                    else
+                    {
+                        //MessageBox.Show("2");
+                        return -1;
+                    }
                 }
-                else
+                else if(!czyDamka )
                 {
-                    //MessageBox.Show("2");
-                    return -1;
+                    
+                    if (zmianaX == 0 || zmianaY == 0)
+                    {
+                        //MessageBox.Show("0");
+                        return -1;
+                    }
+                    else if ((zmianaX == 1 || zmianaX == -1) && (zmianaY == 1 || zmianaY == -1))
+                    {
+                        plansza[pozycjaXPodniesionegoKamienia, pozycjaYPodniesionegoKamienia] = 0;
+                        if (CzyWPozycjiDoDamki(pionowo)) plansza[poziomo, pionowo] = NumerGraczaWykonującegoNastępnyRuch + 2;
+                        else plansza[poziomo, pionowo] = NumerGraczaWykonującegoNastępnyRuch;
+                        zmieńBierzącegoGracza();
+                        obliczLiczbyPól();
+                        //MessageBox.Show("1","Przesuniento");
+                        return 0;
+                    }            
+                    else if ((zmianaX == 2 || zmianaX == -2) && (zmianaY == 2 || zmianaY == -2))
+                    {
+                        if (plansza[zmianaX / 2 + pozycjaXPodniesionegoKamienia, zmianaY / 2 + pozycjaYPodniesionegoKamienia]
+                            == numerPrzeciwnika(NumerGraczaWykonującegoNastępnyRuch))
+                        {
+                            plansza[zmianaX / 2 + pozycjaXPodniesionegoKamienia,
+                                zmianaY / 2 + pozycjaYPodniesionegoKamienia] = 0;
+                            plansza[pozycjaXPodniesionegoKamienia, pozycjaYPodniesionegoKamienia] = 0;
+                            if (CzyWPozycjiDoDamki(pionowo)) plansza[poziomo, pionowo] = NumerGraczaWykonującegoNastępnyRuch + 2;
+                            else plansza[poziomo, pionowo] = NumerGraczaWykonującegoNastępnyRuch;
+                            zmieńBierzącegoGracza();
+                            obliczLiczbyPól();
+                            return 1;
+                        }
+                    }
+                    else
+                    {
+                        //MessageBox.Show("2");
+                        return -1;
+                    }
+
+                    
                 }
-                
             }   
             //koniec if-u
 
@@ -191,6 +309,23 @@ namespace Warcaby
             zmieńBierzącegoGracza();
             //MessageBox.Show("x");
             return ileKamieniZbitych;
+        }
+
+        private bool CzyWPozycjiDoDamki(int pionowo)
+        {
+            if (NumerGraczaWykonującegoNastępnyRuch == 1 && pionowo==0)
+            {
+                MessageBox.Show("Nowa damka");
+                return true;
+            }
+            else if (NumerGraczaWykonującegoNastępnyRuch == 2 && pionowo == 7)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool PrzenieśKamień(int poziomo, int pionowo)

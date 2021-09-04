@@ -108,7 +108,7 @@ namespace Warcaby
 
                 listaRuchówBiały.SelectedIndex = listaRuchówBiały.Items.Count - 1;
                 listaRuchówCzarny.SelectedIndex = listaRuchówCzarny.Items.Count - 1;
-
+                
                 SytułacjaNaPlanszy sytułacjaNaPlanszy =
                     silnik.ZbadajSytułacjeNaPlanszy();
                 bool koniecGry = false;
@@ -242,9 +242,9 @@ namespace Warcaby
             okno.Left = Ustawienia.CzytajLeft();
 
             odtważacz = new MediaPlayer();
-            ścierzkaKliknięcia = System.IO.Path.GetFullPath("Klik.mp3");
-            ścierzkaWygranej = System.IO.Path.GetFullPath("Win.mp3");
-            ścierzkaRemisu = System.IO.Path.GetFullPath("Lose.mp3");
+            ścierzkaKliknięcia = System.IO.Path.GetFullPath("Sound/Klik.mp3");
+            ścierzkaWygranej = System.IO.Path.GetFullPath("Sound/Win.mp3");
+            ścierzkaRemisu = System.IO.Path.GetFullPath("Sound/Lose.mp3");
             ruchyGraczaBiałego = new string[60];
             ruchyGraczaCzarnego = new string[60];
 

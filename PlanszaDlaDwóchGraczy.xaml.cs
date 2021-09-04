@@ -121,7 +121,7 @@ namespace Warcaby
         private SolidColorBrush pędzelPustegoPola = Brushes.LightCoral;
         private SolidColorBrush pędzelGracza1 = Brushes.BlanchedAlmond;
         private SolidColorBrush pędzelGracza2 = Brushes.SlateGray;
-        private SolidColorBrush pędzelDamkiGracza1 = Brushes.BlanchedAlmond;
+        private SolidColorBrush pędzelDamkiGracza1 = Brushes.Red;
         private SolidColorBrush pędzelDamkiGracza2 = Brushes.SlateGray;
 
         public SolidColorBrush PędzelDlaStanu(StanPola stanPola)

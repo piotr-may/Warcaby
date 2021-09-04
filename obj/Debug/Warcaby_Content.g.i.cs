@@ -8,8 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("klik.mp3")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lose.mp3")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("win.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sound/klik.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sound/lose.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sound/win.mp3")]
 
 

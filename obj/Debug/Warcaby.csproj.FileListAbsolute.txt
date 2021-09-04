@@ -64,9 +64,6 @@ E:\Projekty\Warcaby\Build\Win.mp3
 E:\Projekty\Warcaby\Build\Warcaby.exe.config
 E:\Projekty\Warcaby\Build\Warcaby.exe
 E:\Projekty\Warcaby\Build\Warcaby.pdb
-E:\Projekty\Warcaby_Projekt\Warcaby\Build\Klik.mp3
-E:\Projekty\Warcaby_Projekt\Warcaby\Build\Lose.mp3
-E:\Projekty\Warcaby_Projekt\Warcaby\Build\Win.mp3
 E:\Projekty\Warcaby_Projekt\Warcaby\Build\Warcaby.exe.config
 E:\Projekty\Warcaby_Projekt\Warcaby\Build\Warcaby.exe
 E:\Projekty\Warcaby_Projekt\Warcaby\Build\Warcaby.pdb
@@ -89,3 +86,6 @@ E:\Projekty\Warcaby_Projekt\Warcaby\obj\Debug\Warcaby.csproj.CoreCompileInputs.c
 E:\Projekty\Warcaby_Projekt\Warcaby\obj\Debug\Warcaby.csproj.CopyComplete
 E:\Projekty\Warcaby_Projekt\Warcaby\obj\Debug\Warcaby.exe
 E:\Projekty\Warcaby_Projekt\Warcaby\obj\Debug\Warcaby.pdb
+E:\Projekty\Warcaby_Projekt\Warcaby\Build\Sound\Klik.mp3
+E:\Projekty\Warcaby_Projekt\Warcaby\Build\Sound\Lose.mp3
+E:\Projekty\Warcaby_Projekt\Warcaby\Build\Sound\Win.mp3
