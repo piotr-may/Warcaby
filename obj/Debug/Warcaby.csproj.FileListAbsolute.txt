@@ -52,3 +52,9 @@ E:\Projekty\Warcaby\Warcaby\obj\Debug\Warcaby.Properties.Resources.resources
 E:\Projekty\Warcaby\Warcaby\obj\Debug\Warcaby.csproj.GenerateResource.cache
 E:\Projekty\Warcaby\Warcaby\obj\Debug\Warcaby.csproj.CoreCompileInputs.cache
 E:\Projekty\Warcaby\Warcaby\obj\Debug\Warcaby.csproj.CopyComplete
+E:\Projekty\Build\Klik.mp3
+E:\Projekty\Build\Lose.mp3
+E:\Projekty\Build\Win.mp3
+E:\Projekty\Build\Warcaby.exe.config
+E:\Projekty\Build\Warcaby.exe
+E:\Projekty\Build\Warcaby.pdb
