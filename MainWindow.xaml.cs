@@ -16,7 +16,7 @@ namespace Warcaby
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string wersja = "1.2.0.1";
+        private string wersja = "1.2.3.1";
 
         MediaPlayer odtważacz;
         private string ścierzkaKliknięcia;
