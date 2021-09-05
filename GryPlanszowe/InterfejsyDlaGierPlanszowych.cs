@@ -31,6 +31,7 @@ namespace Warcaby
         int LiczbaPólGracz1 { get; }
         int LiczbaPólGracz2 { get; }
 
+
         void Pasuj();
 
         SytułacjaNaPlanszy ZbadajSytułacjeNaPlanszy();

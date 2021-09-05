@@ -31,8 +31,8 @@ namespace Warcaby
         }
 
         public int LiczbaPustychPól { get { return liczbyPól[0]; } }
-        public int LiczbaPólGracz1 { get { return liczbyPól[1]; } }
-        public int LiczbaPólGracz2 { get { return liczbyPól[2]; } }
+        public int LiczbaPólGracz1 { get { return liczbyPól[1] + liczbyPól[3]; } }
+        public int LiczbaPólGracz2 { get { return liczbyPól[2] + liczbyPól[4]; } }
         public int LiczbaDamekGracz1 { get { return liczbyPól[3]; } }
         public int LiczbaDamekGracz2 { get { return liczbyPól[4]; } }
 
@@ -125,7 +125,7 @@ namespace Warcaby
                 NumerGraczaWykonującegoNastępnyRuch + 2)
             {
                 czyDamka = true;
-                MessageBox.Show("wybrano damke");
+                //MessageBox.Show("wybrano damke");
             }
             else czyDamka = false;
 

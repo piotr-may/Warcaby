@@ -26,7 +26,7 @@
       <komórka21>0</komórka21>
       <komórka22>2</komórka22>
       <komórka23>0</komórka23>
-      <komórka24>1</komórka24>
+      <komórka24>0</komórka24>
       <komórka25>0</komórka25>
       <komórka26>1</komórka26>
       <komórka27>0</komórka27>
@@ -37,16 +37,16 @@
       <komórka32>0</komórka32>
       <komórka33>0</komórka33>
       <komórka34>0</komórka34>
-      <komórka35>2</komórka35>
+      <komórka35>1</komórka35>
       <komórka36>0</komórka36>
       <komórka37>1</komórka37>
     </rząd3>
     <rząd4>
       <komórka40>2</komórka40>
       <komórka41>0</komórka41>
-      <komórka42>0</komórka42>
+      <komórka42>2</komórka42>
       <komórka43>0</komórka43>
-      <komórka44>2</komórka44>
+      <komórka44>0</komórka44>
       <komórka45>0</komórka45>
       <komórka46>1</komórka46>
       <komórka47>0</komórka47>
@@ -59,14 +59,14 @@
       <komórka54>0</komórka54>
       <komórka55>1</komórka55>
       <komórka56>0</komórka56>
-      <komórka57>0</komórka57>
+      <komórka57>1</komórka57>
     </rząd5>
     <rząd6>
       <komórka60>2</komórka60>
       <komórka61>0</komórka61>
-      <komórka62>0</komórka62>
+      <komórka62>2</komórka62>
       <komórka63>0</komórka63>
-      <komórka64>1</komórka64>
+      <komórka64>0</komórka64>
       <komórka65>0</komórka65>
       <komórka66>1</komórka66>
       <komórka67>0</komórka67>
@@ -77,20 +77,20 @@
       <komórka72>0</komórka72>
       <komórka73>0</komórka73>
       <komórka74>0</komórka74>
-      <komórka75>0</komórka75>
+      <komórka75>1</komórka75>
       <komórka76>0</komórka76>
       <komórka77>1</komórka77>
     </rząd7>
   </plansza>
   <gracz>
-    <następny>2</następny>
+    <następny>1</następny>
   </gracz>
   <ruchyBiały>
-    <ruchB0>F6 &gt; E5</ruchB0>
-    <ruchB1>D6 &gt; C5</ruchB1>
-    <ruchB2>G7 &gt; F6</ruchB2>
-    <ruchB3>F8 &gt; G7</ruchB3>
-    <ruchB4>H6 &gt; G5</ruchB4>
+    <ruchB0 />
+    <ruchB1 />
+    <ruchB2 />
+    <ruchB3 />
+    <ruchB4 />
     <ruchB5 />
     <ruchB6 />
     <ruchB7 />
@@ -148,10 +148,10 @@
     <ruchB59 />
   </ruchyBiały>
   <ruchyCzarny>
-    <ruchC0>G3 &gt; F4</ruchC0>
-    <ruchC1>F4 &gt; D6</ruchC1>
-    <ruchC2>E3 &gt; F4</ruchC2>
-    <ruchC3>F4 &gt; E5</ruchC3>
+    <ruchC0 />
+    <ruchC1 />
+    <ruchC2 />
+    <ruchC3 />
     <ruchC4 />
     <ruchC5 />
     <ruchC6 />
