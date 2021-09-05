@@ -40,7 +40,7 @@
         <local:PlanszaDlaDwóchGraczy x:Name="planszaKontrolka" Grid.Column="0"
                                          Margin="10,10,10,10" KolorPustegoPola="LightGray" 
                                          KolorGracza1="BlanchedAlmond" KolorGracza2="SlateGray"
-                                     KolorDamkiGracza1="Red" KolorDamkiGracza2="Black"
+                                     KolorDamkiGracza1="#fac298" KolorDamkiGracza2="#3a454f"
                                          KliknięciePola="PlanszaKontrolka_KliknięciePola"/>
         <Grid Grid.Column="1" Margin="0,0,0,0" >
             <Grid.ColumnDefinitions>
